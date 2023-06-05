@@ -1,5 +1,5 @@
 # Checkers-project
-![Checkers wireframe ](checkers.jpg)
+![Checkers wireframe](checkers.jpg)
 overall Pseudocode:
 1) Define required constants
 
