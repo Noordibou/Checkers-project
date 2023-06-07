@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* viewport units: vh (viewport height), vw, vmin (smallest between vh & vw) we use persentages with these units */
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 10vmin);
+    grid-template-rows: repeat(8, 10vmin);
+    gap: 0.5vmin;
+    border: 0.7vmin solid rgba(87, 52, 7, 0.842);
+    
+}
+
+#board>div {
+
+    border: 0.1vmin solid grey;
+}
+
+.beige {
+    background-color: rgba(219, 219, 192, 0.932);
+}
+
+.brown {
+    background-color: rgb(190, 135, 72);
+}
+
+.black-piece {
+    background-color: black;
+    border-radius: 50%;
+    height: 8vmin;
+    width: 8vmin;
+    margin: 1vmin;
+
+}
+
+.white-piece {
+    background-color: white;
+    border-radius: 50%;
+    height: 8vmin;
+    width: 8vmin;
+    margin: 1vmin;
+
+}
