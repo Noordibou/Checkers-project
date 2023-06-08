@@ -3,7 +3,6 @@
 }
 
 body {
-    /* viewport units: vh (viewport height), vw, vmin (smallest between vh & vw) we use persentages with these units */
     height: 100vh;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -11,6 +10,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+h1 {
+    color: grey;
+    font-size: 3vmin;
 }
 
 #board {
