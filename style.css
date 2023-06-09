@@ -23,6 +23,7 @@ h1 {
     grid-template-rows: repeat(8, 10vmin);
     gap: 0.5vmin;
     border: 0.7vmin solid rgba(87, 52, 7, 0.842);
+    margin-top: 10vmin;
 
 }
 
@@ -70,4 +71,18 @@ h1 {
 .brown:hover .white-piece {
     background-color: #ffdf43;
 
+}
+
+button {
+    margin-top: 0.5vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    border: 0.1vmin solid grey;
+    color: grey;
+}
+
+button:hover {
+    color: white;
+    background-color: darkgray;
 }

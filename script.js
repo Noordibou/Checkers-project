@@ -44,8 +44,8 @@ validSquares.forEach(square => {
                 currPlayer = 'black';
             }
 
-            let turnIndicator = document.querySelector('h1');
-            turnIndicator.textContent = (currPlayer === 'black') ? "Black's Turn" : "White's Turn";
+            let turn = document.querySelector('h1');
+            turn.textContent = (currPlayer === 'black') ? "Black's Turn" : "White's Turn";
         }
     });
 });
