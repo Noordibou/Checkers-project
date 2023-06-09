@@ -1,45 +1,132 @@
-/*----- constants -----*/
-const players = {
-    '1': 'white',
-    '-1': 'black'
-}
+const validSquares = document.querySelectorAll('.brown');
 
-/*----- state variables -----*/
-let board, turn, winner;
+let currPlayer = 'black';
 
-/*----- cached elements  -----*/
-const msg = document.querySelector('h1');
+validSquares.forEach(square => {
+    square.addEventListener('click', function () {
+        let blackPiece = square.querySelector('.black-piece');
+        let whitePiece = square.querySelector('.white-piece');
+        let row = parseInt(square.id.charAt(3));
+        let col = parseInt(square.id.charAt(1));
+        if (blackPiece && playerPiece(blackPiece)) {
+            removeHighlight();
+            square.classList.add('selected');
 
-/*----- event listeners -----*/
+            const allowedMoves = findValidMoves(col, row);
 
+            allowedMoves.forEach(move => {
+                let validSquare = document.getElementById('c' + move.col + 'r' + move.row);
 
-/*----- functions -----*/
-init()
+                validSquare.classList.add('allowed-move');
+            })
+        }
+        else if (whitePiece && playerPiece(whitePiece)) {
+            removeHighlight();
+            square.classList.add('selected');
 
-function init() {
+            const allowedMoves = findValidMoves(col, row);
 
-    board = [
-        [0, 1, 0, 2, 0, 3, 0, 4],
-        [5, 0, 6, 0, 7, 0, 8, 0],
-        [0, 9, 0, 10, 0, 11, 0, 12],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [13, 0, 14, 0, 15, 0, 16, 0],
-        [0, 17, 0, 18, 0, 19, 0, 20],
-        [21, 0, 22, 0, 23, 0, 24, 0]
-    ];
-    turn = 1;
-    winner = null;
-    render();
-}
+            allowedMoves.forEach(move => {
+                let validSquare = document.getElementById('c' + move.col + 'r' + move.row);
 
-function renderMessage() {
-    if (winner === 'T') {
-        msg.innerText = "It's a Tie!!!";
-    } else if (winner) {
-        msg.innerHTML = `<span style= "color: ${players[winner]}">${players[winner].toUpperCase()}</span> Wins!`;
-    } else {
-        //game is in play
-        msg.innerHTML = `<span style= "color: ${players[turn]}">${players[turn].toUpperCase()}</span>'s Turn`;
+                validSquare.classList.add('allowed-move');
+            })
+        }
+        else if (square.classList.contains('allowed-move')) {
+
+            movePiece(square, blackPiece, whitePiece);
+            removeHighlight();
+            square.classList.remove('selected');
+
+            if (currPlayer === 'black') {
+                currPlayer = 'white';
+            } else {
+                currPlayer = 'black';
+            }
+
+            let turnIndicator = document.querySelector('h1');
+            turnIndicator.textContent = (currPlayer === 'black') ? "Black's Turn" : "White's Turn";
+        }
+    });
+});
+
+function movePiece(square, blackPiece, whitePiece) {
+    const targetRow = parseInt(square.id.charAt(3));
+
+    if (blackPiece) {
+        blackPiece.parentNode.removeChild(blackPiece);
+    } else if (whitePiece) {
+        whitePiece.parentNode.removeChild(whitePiece);
     }
-};
+
+
+    const newPiece = document.createElement('div');
+    newPiece.classList.add(currPlayer === 'black' ? 'black-piece' : 'white-piece');
+    square.appendChild(newPiece);
+
+
+    const isBlackKing = currPlayer === 'black' && targetRow === 7;
+    const isWhiteKing = currPlayer === 'white' && targetRow === 0;
+    if (isBlackKing || isWhiteKing) {
+        newPiece.classList.add('king');
+    }
+}
+
+
+function playerPiece(piece) {
+    if ((currPlayer === 'black' && piece.classList.contains('black-piece')) || (currPlayer === 'white' && piece.classList.contains('white-piece'))) {
+        return true;
+    }
+    return false;
+}
+
+function removeHighlight() {
+    validSquares.forEach(function (square) {
+        square.classList.remove('selected');
+        square.classList.remove('allowed-move');
+    });
+}
+
+function findValidMoves(col, row) {
+    let validMoves = [];
+    let piece = document.querySelector('#c' + col + 'r' + row + ' .black-piece, #c' + col + 'r' + row + ' .white-piece');
+
+    let black = piece.classList.contains('black-piece');
+    let white = piece.classList.contains('white-piece');
+
+    let leftCol = col - 1;
+    let rightCol = col + 1;
+    let newRowB = row + 1;
+    let newRowW = row - 1;
+
+    if (black) {
+        if (isValidMove(leftCol, newRowB,)) {
+            validMoves.push({ col: leftCol, row: newRowB });
+        }
+        if (isValidMove(rightCol, newRowB)) {
+            validMoves.push({ col: rightCol, row: newRowB, });
+        }
+    }
+    else if (white) {
+        if (isValidMove(leftCol, newRowW,)) {
+            validMoves.push({ col: leftCol, row: newRowW });
+        }
+        if (isValidMove(rightCol, newRowW)) {
+            validMoves.push({ col: rightCol, row: newRowW, });
+        }
+    }
+
+    return validMoves;
+}
+
+
+function isValidMove(col, row) {
+    if (row >= 0 && row < 8 && col >= 0 && col < 8) {
+        let square = document.getElementById('c' + col + 'r' + row);
+        let piece = square.querySelector('.black-piece, .white-piece');
+        if (!piece) {
+            return true;
+        }
+    }
+    return false;
+}

@@ -23,7 +23,7 @@ h1 {
     grid-template-rows: repeat(8, 10vmin);
     gap: 0.5vmin;
     border: 0.7vmin solid rgba(87, 52, 7, 0.842);
-    
+
 }
 
 #board>div {
@@ -54,5 +54,20 @@ h1 {
     height: 8vmin;
     width: 8vmin;
     margin: 1vmin;
+
+}
+
+.allowed-move {
+    background-color: #8cff96;
+}
+
+
+.selected {
+    outline: 3px solid #ffdf43;
+}
+
+.brown:hover .black-piece,
+.brown:hover .white-piece {
+    background-color: #ffdf43;
 
 }
