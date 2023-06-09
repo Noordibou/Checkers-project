@@ -1,20 +1,22 @@
 # Checkers-project
 ![Checkers wireframe](checkers.jpg)
-overall Pseudocode:
-1) Define required constants
+![Checkers game](actual-game.png)
 
-2) Define required variables used to track the state of the game
-2.1) score, turn
+This online checkers board game is played on an 8x8 grid, consisting of 64 squares of alternating dark and light colors. Each player starts with 12 checkers placed on the dark squares of their respective sides of the board.
 
-3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant.
+The objective of the game is to capture all of the opponent's checkers or block them from making any legal moves.
 
-4) Upon loading the app should:
-  4.1) Initialize the state variables
-  4.2) Render those values to the page
-  4.3) Wait for the user to click a circle, and cell
+Players take turns moving their checkers diagonally to an adjacent empty square. Regular checkers can only move forward diagonally, one square at a time. However, if a player's checker reaches the opponent's back row, it gets promoted to a "king" checker, which can move both forward and backward diagonally.
 
-5) Handle a player clicking a circle, and cell.
+To capture an opponent's checker, a player must "jump" over it by moving their checker diagonally over an adjacent square and landing on an empty square immediately on the other side.
 
-6) Handle the data that is changed after a the cell is clicked
+ The game can provide a graphical user interface where players can click on their checkers and then click on the destination square to make a move. The interface can also highlight valid moves for the selected checker to assist players in making their decisions. it can also keep track of the current turn.
 
-7) Handle a player clicking the restart button
+ Overall, this online checkers board game would provide an enjoyable and challenging experience for players of all ages.
+
+Technologies Used: HTML, CSS, and JS.
+
+Getting Started: 
+
+Next Steps:
+Regrettably, the development of the game could not be completed in its entirety. There are two key aspects that require further attention: removing old pieces and implementing a mechanism to skip occupied spaces.
