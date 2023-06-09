@@ -11,12 +11,13 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 h1 {
     color: rgb(0, 0, 0);
     font-size: 5vmin;
-    margin-top: 10vmin;
+    margin-top: 5vmin;
     margin-bottom: 1vmin;
-    
+
 }
 
 h2 {
@@ -26,8 +27,8 @@ h2 {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(8, 10vmin);
-    grid-template-rows: repeat(8, 10vmin);
+    grid-template-columns: repeat(8, 8vmin);
+    grid-template-rows: repeat(8, 8vmin);
     gap: 0.5vmin;
     border: 0.7vmin solid rgba(87, 52, 7, 0.842);
     /* margin-top: 1vmin; */
@@ -50,8 +51,8 @@ h2 {
 .black-piece {
     background-color: rgb(0, 0, 0);
     border-radius: 50%;
-    height: 8vmin;
-    width: 8vmin;
+    height: 6vmin;
+    width: 6vmin;
     margin: 1vmin;
 
 }
@@ -59,8 +60,8 @@ h2 {
 .white-piece {
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    height: 8vmin;
-    width: 8vmin;
+    height: 6vmin;
+    width: 6vmin;
     margin: 1vmin;
 
 }
