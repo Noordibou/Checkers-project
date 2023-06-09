@@ -49,30 +49,6 @@ validSquares.forEach(square => {
         }
     });
 });
-
-function movePiece(square, blackPiece, whitePiece) {
-    const targetRow = parseInt(square.id.charAt(3));
-
-    if (blackPiece) {
-        blackPiece.parentNode.removeChild(blackPiece);
-    } else if (whitePiece) {
-        whitePiece.parentNode.removeChild(whitePiece);
-    }
-
-
-    const newPiece = document.createElement('div');
-    newPiece.classList.add(currPlayer === 'black' ? 'black-piece' : 'white-piece');
-    square.appendChild(newPiece);
-
-
-    const isBlackKing = currPlayer === 'black' && targetRow === 7;
-    const isWhiteKing = currPlayer === 'white' && targetRow === 0;
-    if (isBlackKing || isWhiteKing) {
-        newPiece.classList.add('king');
-    }
-}
-
-
 function playerPiece(piece) {
     if ((currPlayer === 'black' && piece.classList.contains('black-piece')) || (currPlayer === 'white' && piece.classList.contains('white-piece'))) {
         return true;
@@ -130,3 +106,26 @@ function isValidMove(col, row) {
     }
     return false;
 }
+
+function movePiece(square, blackPiece, whitePiece) {
+    const targetRow = parseInt(square.id.charAt(3));
+
+    if (blackPiece) {
+        blackPiece.parentNode.removeChild(blackPiece);
+    } else if (whitePiece) {
+        whitePiece.parentNode.removeChild(whitePiece);
+    }
+
+
+    const newPiece = document.createElement('div');
+    newPiece.classList.add(currPlayer === 'black' ? 'black-piece' : 'white-piece');
+    square.appendChild(newPiece);
+
+
+    const isBlackKing = currPlayer === 'black' && targetRow === 7;
+    const isWhiteKing = currPlayer === 'white' && targetRow === 0;
+    if (isBlackKing || isWhiteKing) {
+        newPiece.classList.add('king');
+    }
+}
+

@@ -16,7 +16,7 @@ To capture an opponent's checker, a player must "jump" over it by moving their c
 
 Technologies Used: HTML, CSS, and JS.
 
-Getting Started: 
+Getting Started: https://half-checkers.netlify.app/
 
 Next Steps:
 Regrettably, the development of the game could not be completed in its entirety. There are two key aspects that require further attention: removing old pieces and implementing a mechanism to skip occupied spaces.
