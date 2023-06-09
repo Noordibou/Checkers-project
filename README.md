@@ -1,8 +1,9 @@
 # Checkers-project
-![Checkers wireframe](checkers-wireframe.jpg)
+![Checkers game](actual-game.png)
+
+# Discription:
 This online checkers board game is played on an 8x8 grid, consisting of 64 squares of alternating dark and light colors. Each player starts with 12 checkers placed on the dark squares of their respective sides of the board.
 
-![Checkers game](actual-game.png)
 
 The objective of the game is to capture all of the opponent's checkers or block them from making any legal moves.
 
@@ -14,9 +15,11 @@ To capture an opponent's checker, a player must "jump" over it by moving their c
 
  Overall, this online checkers board game would provide an enjoyable and challenging experience for players of all ages.
 
-Technologies Used: HTML, CSS, and JS.
+# Technologies Used:
+ HTML, CSS, and JS.
 
-Getting Started: https://half-checkers.netlify.app/
+# Getting Started:
+ https://half-checkers.netlify.app/
 
-Next Steps:
+# Next Steps:
 Regrettably, the development of the game could not be completed in its entirety. There are two key aspects that require further attention: removing old pieces and implementing a mechanism to skip occupied spaces.
