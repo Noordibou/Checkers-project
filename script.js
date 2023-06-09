@@ -44,7 +44,7 @@ validSquares.forEach(square => {
                 currPlayer = 'black';
             }
 
-            let turn = document.querySelector('h1');
+            let turn = document.querySelector('h2');
             turn.textContent = (currPlayer === 'black') ? "Black's Turn" : "White's Turn";
         }
     });

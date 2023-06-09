@@ -11,9 +11,15 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 h1 {
-    color: grey;
+    color: rgb(0, 0, 0);
+    font-size: 5vmin;
+    margin-top: 10vmin;
+    
+}
+
+h2 {
+    color: rgb(128, 128, 128);
     font-size: 3vmin;
 }
 
@@ -23,13 +29,13 @@ h1 {
     grid-template-rows: repeat(8, 10vmin);
     gap: 0.5vmin;
     border: 0.7vmin solid rgba(87, 52, 7, 0.842);
-    margin-top: 10vmin;
+    /* margin-top: 1vmin; */
 
 }
 
 #board>div {
 
-    border: 0.1vmin solid grey;
+    border: 0.1vmin solid rgb(128, 128, 128);
 }
 
 .beige {
@@ -41,7 +47,7 @@ h1 {
 }
 
 .black-piece {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     border-radius: 50%;
     height: 8vmin;
     width: 8vmin;
@@ -50,7 +56,7 @@ h1 {
 }
 
 .white-piece {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 50%;
     height: 8vmin;
     width: 8vmin;
@@ -59,17 +65,17 @@ h1 {
 }
 
 .allowed-move {
-    background-color: #8cff96;
+    background-color: rgb(140, 255, 150);
 }
 
 
 .selected {
-    outline: 3px solid #ffdf43;
+    outline: 3px solid rgb(255, 223, 67);
 }
 
 .brown:hover .black-piece,
 .brown:hover .white-piece {
-    background-color: #ffdf43;
+    background-color: rgb(255, 223, 67);
 
 }
 
@@ -78,11 +84,11 @@ button {
     padding: 2vmin;
     font-size: 2vmin;
     border-radius: 4vmin;
-    border: 0.1vmin solid grey;
-    color: grey;
+    border: 0.1vmin solid rgb(128, 128, 128);
+    color: rgb(128, 128, 128);
 }
 
 button:hover {
-    color: white;
-    background-color: darkgray;
+    color: rgb(255, 255, 255);
+    background-color: rgb(169, 169, 169);
 }
