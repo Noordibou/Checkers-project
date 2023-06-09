@@ -108,24 +108,16 @@ function isValidMove(col, row) {
 }
 
 function movePiece(square, blackPiece, whitePiece) {
-    const targetRow = parseInt(square.id.charAt(3));
-
-    if (blackPiece) {
-        blackPiece.parentNode.removeChild(blackPiece);
-    } else if (whitePiece) {
-        whitePiece.parentNode.removeChild(whitePiece);
-    }
-
-
     const newPiece = document.createElement('div');
     newPiece.classList.add(currPlayer === 'black' ? 'black-piece' : 'white-piece');
     square.appendChild(newPiece);
+    
+    // const targetRow = parseInt(square.id.charAt(3));
 
-
-    const isBlackKing = currPlayer === 'black' && targetRow === 7;
-    const isWhiteKing = currPlayer === 'white' && targetRow === 0;
-    if (isBlackKing || isWhiteKing) {
-        newPiece.classList.add('king');
-    }
+    // const BlackKing = currPlayer === 'black' && targetRow === 7;
+    // const WhiteKing = currPlayer === 'white' && targetRow === 0;
+    // if (BlackKing || WhiteKing) {
+    //     newPiece.classList.add('king');
+    // }
 }
 
