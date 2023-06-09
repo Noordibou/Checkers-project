@@ -1,8 +1,8 @@
 # Checkers-project
-![Checkers wireframe](checkers.jpg)
-![Checkers game](actual-game.png)
-
+![Checkers wireframe](checkers-wireframe.jpg)
 This online checkers board game is played on an 8x8 grid, consisting of 64 squares of alternating dark and light colors. Each player starts with 12 checkers placed on the dark squares of their respective sides of the board.
+
+![Checkers game](actual-game.png)
 
 The objective of the game is to capture all of the opponent's checkers or block them from making any legal moves.
 
