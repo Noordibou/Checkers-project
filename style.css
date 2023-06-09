@@ -15,12 +15,13 @@ h1 {
     color: rgb(0, 0, 0);
     font-size: 5vmin;
     margin-top: 10vmin;
+    margin-bottom: 1vmin;
     
 }
 
 h2 {
     color: rgb(128, 128, 128);
-    font-size: 3vmin;
+    font-size: 2vmin;
 }
 
 #board {
